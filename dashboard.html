@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Dashboard — Fincept</title>
+  <meta name="description" content="Customer-facing Fincept dashboard with realistic financial data, portfolio summary, watchlists, macro indicators, and market news." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="announcement-bar" data-site-announcement></div>
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <div class="brand-mark">F</div>
+          <div class="brand-copy">
+            <div class="brand-title">Fincept</div>
+            <div class="brand-subtitle">Customer Dashboard</div>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a data-page="index.html" href="index.html">Home</a>
+          <a data-page="dashboard.html" href="dashboard.html">Dashboard</a>
+          <a data-page="company-analysis.html" href="company-analysis.html">Company Analysis</a>
+          <a data-page="faq.html" href="faq.html">FAQ</a>
+          <a data-page="privacy.html" href="privacy.html">Privacy</a>
+          <a data-page="terms.html" href="terms.html">Terms</a>
+          <a data-page="admin.html" href="admin.html">Admin</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button ghost" href="company-analysis.html">Featured company</a>
+          <a class="button primary" href="admin.html">Manage site</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container dashboard-layout">
+        <aside class="dashboard-sidebar">
+          <div class="sidebar-card">
+            <div class="small muted">Workspace</div>
+            <div style="font-size:26px; font-weight:800; margin-top:6px;">Investor HQ</div>
+            <div class="muted" style="margin-top:6px;">A clean customer-facing dashboard with realistic signals and research workflows.</div>
+          </div>
+          <div class="sidebar-card menu-list">
+            <a class="active" href="#market-overview">Market overview</a>
+            <a href="#watchlist">Watchlist</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#calendar">Economic calendar</a>
+            <a href="#journal">Conviction Journal™</a>
+          </div>
+          <div class="sidebar-card">
+            <div class="small muted">Support</div>
+            <div style="margin-top:10px; font-weight:700;" data-support-email></div>
+            <div class="spacer-16"></div>
+            <a class="button full secondary" href="faq.html">Open FAQ</a>
+          </div>
+        </aside>
+
+        <div class="dashboard-main">
+          <section class="dashboard-card" id="market-overview">
+            <div style="display:flex; justify-content:space-between; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+              <div>
+                <span class="pill success">Customer-facing dashboard</span>
+                <h1 style="margin:12px 0 8px; font-size:42px; letter-spacing:-0.04em;">Realistic market intelligence, without the terminal sprawl</h1>
+                <p class="section-text" style="margin:0; max-width:760px;">This dashboard blends the signal density users expect from major finance research tools with a more intuitive workflow: market pulse at the top, customer portfolio context in the middle, and thesis-aware journaling underneath. Competitors often help users see what happened; Fincept also helps them remember why they acted. [Source](https://www.koyfin.com/features/) [Source](https://www.tikr.com/) [Source](https://finviz.com/)</p>
+              </div>
+              <div class="callout" style="max-width:320px;">
+                <strong>Competitive wedge:</strong> alerts and ideas are tied to Conviction Journal™ entries, not just price movement.
+              </div>
+            </div>
+            <div class="spacer-24"></div>
+            <div class="kpi-grid" data-indices></div>
+          </section>
+
+          <section class="dashboard-card">
+            <div style="display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:16px; flex-wrap:wrap;">
+              <div>
+                <h3>Cross-asset pulse</h3>
+                <p>Rates, volatility, commodities, and crypto shown in one customer-ready module.</p>
+              </div>
+              <span class="pill info">Live-style sample data</span>
+            </div>
+            <div class="valuation-grid" data-macro></div>
+            <div class="spacer-16"></div>
+            <div class="chart-panel" data-chart="equity-curve">
+              <div class="overlay-stat">
+                <div class="small muted">Model portfolio</div>
+                <div style="font-size:26px; font-weight:800;">+36.0%</div>
+                <div class="positive small">12-month cumulative</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="split-layout" id="watchlist">
+            <div class="dashboard-card">
+              <div style="display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:16px; flex-wrap:wrap;">
+                <div>
+                  <h3>Priority watchlist</h3>
+                  <p>Signals blend price, estimate revisions, and conviction level rather than generic watchlist rows.</p>
+                </div>
+                <a class="button ghost" href="company-analysis.html">Open analysis page</a>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Ticker</th><th>Company</th><th>Price</th><th>Day</th><th>Signal</th><th>Conviction</th></tr>
+                  </thead>
+                  <tbody data-watchlist></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="dashboard-card">
+              <h3>Market breadth heatmap</h3>
+              <p>Fast visual discovery inspired by top market map interfaces, but simplified for easier scanning. [Source](https://finviz.com/)</p>
+              <div class="spacer-16"></div>
+              <div class="heatmap" data-heatmap></div>
+            </div>
+          </section>
+
+          <section class="split-layout" id="portfolio">
+            <div class="dashboard-card">
+              <h3>Portfolio command center</h3>
+              <p>Risk, NAV, drawdown, and sector exposures connected to watchlist intelligence.</p>
+              <div class="spacer-16"></div>
+              <div data-portfolio-stats></div>
+              <div class="spacer-16"></div>
+              <div class="chart-panel small" data-chart="portfolio-curve"></div>
+            </div>
+            <div class="dashboard-card">
+              <h3>Portfolio notes</h3>
+              <div class="list">
+                <div class="list-item"><div><div class="title">Top overweight</div><div class="meta">Technology remains the largest exposure as AI infrastructure and software monetization drive revisions.</div></div><span class="pill success">38%</span></div>
+                <div class="list-item"><div><div class="title">Primary hedge</div><div class="meta">Higher-quality cash flow names and diversified healthcare reduce volatility drag.</div></div><span class="pill info">Defensive</span></div>
+                <div class="list-item"><div><div class="title">Watch closely</div><div class="meta">Rate-sensitive consumer names if 10Y yield pushes materially above 4.4%.</div></div><span class="pill warning">Macro trigger</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="split-layout" id="calendar">
+            <div class="dashboard-card">
+              <h3>Economic calendar</h3>
+              <p>Actual versus expected data helps users connect macro surprises to portfolio positioning, similar to leading market-monitoring tools. [Source](https://finviz.com/)</p>
+              <div class="spacer-16"></div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Event</th><th>Actual</th><th>Expected</th><th>Prior</th></tr></thead>
+                  <tbody data-calendar></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="dashboard-card">
+              <h3>Research feed</h3>
+              <p>News, macro notes, and cross-asset commentary appear in one stream.</p>
+              <div class="list" data-news></div>
+            </div>
+          </section>
+
+          <section class="dashboard-card" id="journal">
+            <div style="display:flex; justify-content:space-between; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+              <div>
+                <span class="pill purple">Competitive advantage</span>
+                <h3 style="margin-top:12px;">Conviction Journal™</h3>
+                <p>Most platforms help with discovery, screeners, and dashboards. Fincept adds a decision system that stores what you believed, what needed to happen, and what would prove you wrong. That feature can become a real customer retention wedge.</p>
+              </div>
+              <div class="callout" style="max-width:380px;">
+                <strong>Why it wins:</strong> customers learn from their decisions, not just from market prices. That creates stickiness other platforms often miss.
+              </div>
+            </div>
+            <div class="spacer-16"></div>
+            <div class="cards-3" data-journal></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-card">
+        <div>
+          <div class="brand-title">Fincept Dashboard</div>
+          <div class="muted">Customer-ready static demo with realistic financial data and modern UX.</div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="company-analysis.html">Company Analysis</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
