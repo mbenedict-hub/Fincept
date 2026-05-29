@@ -9,6 +9,8 @@ This repository contains a polished static website for **fincept.doozy247.net** 
 - Privacy Policy page
 - Terms & Conditions page
 - Admin dashboard for content management in static demo mode
+- Premium AI-powered feature concepts such as Deep Research, Earnings Copilot, explainable AI outputs, and thesis-aware alerts
+- Clean multi-file production structure with separate HTML pages, modular JavaScript files, and shared styling assets
 - GitHub Pages deployment workflow
 - Custom domain `CNAME` file for `fincept.doozy247.net`
 - `robots.txt`, `sitemap.xml`, and `404.html`
@@ -16,6 +18,8 @@ This repository contains a polished static website for **fincept.doozy247.net** 
 ## Competitive advantage added
 
 The strongest differentiator added to the site is **Conviction Journal™**.
+
+The premium positioning also includes AI-assisted research features inspired by high-end market intelligence platforms that emphasize integrated workflows and cited AI outputs. [Source](https://www.alpha-sense.com/)
 
 Instead of stopping at charts, screeners, or company data, the product now records:
 
